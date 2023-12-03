@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="rs-area"></div>
+	<button id="req-btn">메뉴보기</button>
+	
+	<script src="./js/jquery-3.7.0.js"></script>
+	
+	<script>
+		// 1. 클릭했을 때, 서버에 요청하여 JSONArray 데이터 받아오도록 구현해보기
+		// 2. 받아온 데이터를 웹페이지에 출력해보기
+		// - id가 'rs-area'인 div태그에 출력
+		
+		$("#req-btn").on("click", function(){
+			
+			$.ajax({
+				url:"gsonArray",
+				success:function(res){
+					console.log("요청성공!")
+					console.log(res)
+					// $("#rs-area").text(`${res[0].menu}: ${res[0].price} , ${res[1].menu} : ${res[1].price} , ${res[2].menu} : ${res[2].price}`);
+					let rsHTML = "";
+					
+					for(let i = 0; i < res.length; i++){
+						rsHTML += `<p>${res[i].menu} : ${res[i].price}</p>`
+						// 이 문장이 반복되면서 누적된 형태로 rsHTML에 담김 -> p태그가 3개(0,1,2)
+					}
+					
+					$("#rs-area").html(rsHTML);
+				},
+				error:function(){
+					console.log("요청실패..")
+					
+				}
+				
+			});//end ajax
+			
+		});//end event
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	 <%-- 
+	 	EL = 표현식 <%= %>
+	  --%>
+	<%
+		session.setAttribute("id", "leelee");
+		String id = (String)session.getAttribute("id");
+		// session은 기본적으로 object 형태 -> 다운캐스팅해줘야돼
+	%>
+	<!-- session에 저장된 id라는 이름의 값을 웹페이지에 표현하기 -->
+	${id}님 환영합니다!
+</body>
+</html>

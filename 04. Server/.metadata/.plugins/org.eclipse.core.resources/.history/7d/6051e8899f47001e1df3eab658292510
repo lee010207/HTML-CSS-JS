@@ -1,0 +1,53 @@
+package com.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.model.MemberDAO;
+import com.model.MemberDTO;
+
+public class LoginService {
+	
+	
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String email = request.getParameter("email");
+		String pw = request.getParameter("pw");
+		
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = new MemberDTO(email, pw);
+		MemberDTO info = dao.login(dto);
+		
+		HttpSession session = request.getSession();
+		
+		// 1. URL : 정보를 URL 뒤에 붙여서 넘김 -> 보안 취약, 대량 데이터 전송 안됨
+		// 2. request 영역에 저장 : 포워드방식으로 이동
+		// 3. application : 개인 정보가 다 같이 공유됨
+		// 4. cookie : 텍스트 형태로만 저장 할 수 있음, 보안 취약
+		
+		// 5. session : 보안 강력, 대량 데이터 저장 가능
+		// --> 세션 : 서버에 있는 영역(브라우저마다 별개로), 서버에서 보관하면서 사용자별로 다 다르게 공간이 배정됨  ex)개인사물함
+		// --> 고유한 키 값을 JESESSIONID로 부여 : 각 개인별 공간 구분 및 관리 (공간을 열어서 데이터 저장, 꺼내기)
+		// --> 세션 만료 : 고유키 JESESSION 분실 , 브라우저 종료 시
+		// 요청한 사람의 키를 가져와야하기 때문에 세션 만들때는 request객체 이용
+		
+		session.setAttribute("info", info);
+		// session에 로그인 정보 저장
+		// 로그아웃 클릭 전, 브라우저를 닫기 전까지 유지됨
+		
+		if(info != null) {
+			System.out.println(info.toString());
+		}else {
+			System.out.println("로그인 실패");
+		}
+		
+		return "main.jsp";
+		
+	}
+	
+	
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		데이터를 전송하기 위한 방법
+		(1) Do Get : get 방식
+		(2) Do Post : post 방식
+	 -->
+	 <!-- 
+	 	전송하고싶은곳URL?name=value(입력값)
+	 	Ex06GetPost?get=hello
+	 	
+	 	input태그가 하나 더 있으면
+	 	Ex06GetPost?get=hello&name=value
+	 	
+	 	=> QueryString방식
+	 	get 방식은 데이터를 URL 뒤에 붙어 넘어감
+	  -->
+	 <!-- 1. Do get -->
+	 <fieldset>
+	 	<!-- 테두리를 쳐주는 태그 -->
+	 	<legend>Get 방식</legend>
+	 	
+	 	<form action="Ex06GetPost" method ="get">
+	 		ID:<input type="text" name="get"> 
+	 		PW:<input type="text" name="get">
+	 		<input type="submit">
+	 	</form>
+	 	</fieldset>
+	 	<fieldset>
+	 	<legend>Post 방식</legend>
+	 	
+	 	<form action="Ex06GetPost" method ="post">
+	 		ID:<input type="text" name="post">
+	 		PW:<input type="text" name="post">
+	 		<input type="submit">
+	 	</form>
+	 	</fieldset>
+</body>
+</html>

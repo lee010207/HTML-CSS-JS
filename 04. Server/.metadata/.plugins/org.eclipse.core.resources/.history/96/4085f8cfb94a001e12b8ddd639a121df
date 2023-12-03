@@ -1,0 +1,29 @@
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%-- 태그 라이브러리를 추가하겠다고 지시자를 추가해줘야 함 -> JSTL 사용가능 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<% 
+		ArrayList<String> idol = new ArrayList<String>();
+		idol.add("제이홉");
+		idol.add("지수");
+		idol.add("제니");
+		idol.add("로제");
+		idol.add("아이린");
+		pageContext.setAttribute("idol", idol);
+		
+	%>
+	<c:forEach items="${idol }" var="name">
+		${name}
+	</c:forEach>
+</body>
+</html>

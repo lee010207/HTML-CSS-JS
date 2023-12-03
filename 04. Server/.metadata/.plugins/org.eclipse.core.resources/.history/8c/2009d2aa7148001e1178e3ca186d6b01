@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<!--  JSTL을 사용하기 위한 Tag Library 추가 -->
+<!-- 추가로 jstl lib 프로젝트에 추가 (prefix(접두어)를 c로 설정) -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		JSTL 사용하기(EL이랑 함께 주로 쓰임)
+		- 여는태그, 닫는태그 사이에 아무 내용(컨턴츠)이 안들어가기 떄문에 홀태그로도 사용 가능
+		- 특정 영역에 저장하려면 Scope 속성 활용
+		
+	-->
+	
+	<!-- page영역에 값 넣기(JSTL) 
+		 - c:set은 기본적으로 page영역에 저장됨
+	-->
+	<c:set var="num" value="100" />
+	<c:set var="num" scope="session" value="200" />
+	${num}
+	
+</body>
+</html>

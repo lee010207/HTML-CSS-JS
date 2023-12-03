@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="rs-area"></div>
+	<button id="req-btn">데이터요청</button>
+	
+	<script src="./js/jquery-3.7.0.js"></script>
+	
+	<script>
+		// 버튼을 클릭했을 때 동작하는 이벤트 구현
+		
+		$("#req-btn").on("click", function(){
+			// $.ajax() 함수구현
+			$.ajax({
+				url:"gson",
+				success:function(res){
+					console.log("요청성공!")
+					console.log("데이터 : " + res);
+					
+					$("#rs-area").text(`${res.data} , ${res.data2}`);
+					// 응답으로 받아온 JSON 객체 데이터를 받아오기 위해 
+					// JSON형식의 문자열데이터를 JSON.parse()이용해서 형변환해줌
+					//let obj = JSON.parse(res);
+					//console.log(obj);
+					
+				},
+				error:function(){
+					console.log("요청실패..")
+					
+				}
+				
+			});//end ajax
+			
+		});//end event
+	
+	
+	
+	</script>
+</body>
+</html>

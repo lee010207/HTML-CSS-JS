@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* % 단위 : 반응형으로 비율이 유지됨 */
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        #wrap{
+            width: 100%;
+            height: 1000px;
+            background-color: aliceblue;
+        }
+        #header{
+            width: 100%;
+            height : 20%;
+            background-color: rebeccapurple;
+        }
+        #container{
+            width: 80%;
+            height: 70%;
+            background-color: lightgreen;
+            float: left;
+        }
+        #nav{
+            width: 20%;
+            height: 70%;
+            background-color: rgb(219, 207, 248);
+            float: left;
+        }
+        #footer{
+            width: 100%;
+            height: 10%;
+            background-color: blueviolet;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- 기본적으로 바디에는 padding값이 존재함
+         그래서 wrap 바깥에 여백이 생김
+        -> padding을 없애주면 여백 없이 꽉 차게 가능 -->
+    <!-- 전체를 감싸는 div + 각 공간별 div -->
+
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="container"></div>
+        <div id="nav"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

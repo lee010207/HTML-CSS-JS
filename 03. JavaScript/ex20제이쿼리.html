@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit">hi</h1>
+    <!-- 자바 스크립트 파일을 불러오는 역할 : jquery 파일 불러오기-->
+    <script src="./js/jquery-3.7.0.js"></script>
+    <!-- 이 태그는 이 역할(불러오기 -> 파일을 읽어서 실행)로만 사용 가능 -->
+    <script>
+        // jquery 문법 : $로 시작!
+        // $(): 함수 실행
+        const $h1Tag = $("#tit");
+        console.log($h1Tag); 
+        // h1 태그로 접근하겠다 : 선택자로 인식
+        // document.getElementsByTagName("h1") -> $("h1")
+        // $(CSS 선택자) : 선택자에 해당하는 모든 HTML 객체를 배열형태로 반환하는 함수
+
+        // h1 태그에 내용 접근하는 함수 : text(), html()
+        // JavaScript : innerText, innerHTML
+        //console.log($h1Tag.text());
+        //console.log($h1Tag.html());
+        
+        // h1태그 내용 변경
+        $h1Tag.text("변경성공!");
+        // .text() : 태그 적용 X
+        //$h1Tag.html("<a href = '#'>변경성공!</a>");
+        
+        // h1태그 스타일변경하는 함수
+        $h1Tag.css({
+            color:"green",
+            backgroundColor:"yellow"
+        });
+
+        // h1태그 이벤트 적용하는 함수
+        $h1Tag.on("click", function(){
+            alert("클릭이벤트 실행")
+        });
+
+        
+    </script>
+</body>
+</html>

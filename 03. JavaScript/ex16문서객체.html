@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "msg">오늘따라 춥네요 희한하네요...</h1>
+    <p id = "msg2">
+        여기가 msg2 컨텐츠 내용이 담긴 공간!
+        <p>msg2 p 태그 객체 안에 p 태그 공간</p>
+    </p>
+
+    <script>
+        // HTML 문서 내 태그를 제어하려면 가장 먼저 해야하는 것
+        // ★★★ HTML 객체에 접근
+
+        // document : 현재 HTML 문서
+        // .getElementById("msg") : id가 "msg"인 HTML객체에 접근
+
+        // HTML 객체 변수가 값이 바뀌지 않도록 하기 위해 const로 정의
+        const msg = document.getElementById("msg");
+        const msg2 = document.getElementById("msg2");
+
+        // 객체 타입을 확인할 때 
+        console.log("접근한 객체 : " + msg);     
+        
+        // 객체(태그)에 접근
+        console.log(msg);
+
+        // 객체 값에 접근 : 태그의 컨텐츠 가져오기
+        // HTML 객체.innerText : HTML태그의 컨텐츠를 문자열로 반환하는 속성
+        // 해당 태그 안의 컨텐츠 내용을 변경할 때( 태그 인식 X )
+        console.log(msg.innerText);
+         // HTML 객체.innerHTML
+        console.log(msg.innerHTML);
+        // 해당 태그의 내용과 태그를 적용할 때( 태그 인식 O )
+        // msg.innerText = "<a href='#'>하하하하하</a>";
+        msg.innerHTML = "<a href='#'>JavaScript Object</a>";
+
+        // id가 msg2인 HTML 객체의 내용에 접근
+        console.log(msg2.innerText);
+        console.log(msg2.innerHTML);
+
+        
+    </script>
+</body>
+</html>

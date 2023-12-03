@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 10개의 랜덤숫자를 저장하는 배열을 만든 후, 짝수의 개수 출력하기
+        // "arr에 저장된 짝수는 0,0,0,0,0이고 총 0개입니다."
+
+        // 1. 10개의 랜덤숫자를 가진 배열 생성하기
+        let num = [];
+        for(let i = 0; i < 10; i++){
+            let rd = parseInt(Math.random()*100) + 1;
+            num.push(rd);
+        }
+        console.log(num);
+
+        // 2. 반복문을 활용해서 짝수 판단하기
+        
+        let eve = [];
+        for(let i = 0; i < num.length; i++){
+            if(num[i]%2 === 0){
+                eve.push(num[i]);
+            }
+        }
+        console.log(eve);
+        console.log("num에 들어있는 짝수는 "+eve+"이고 총 "+eve.length+"개 입니다.");
+        
+
+        // 템플릿 문자열 : 문자열과 변수를 +연산자 없이 함꼐 사용할 수 있는 문법
+        // 형식 : `문자열 ... ${변수} 문자열...`
+        // ` ` : like 파이썬 포매팅
+        // ~ 버튼 ->  ` `  (문자열로 인식)
+        // ${ } 안에 변수, 배열, 함수 등 작성
+        // - 문자열 데이터를 줄바꿈하더라도 오류 발생 X
+        // 들여쓰기도 같이 인식함!
+console.log(`arr에 저장된 짝수는 
+${eve}이고 
+총 ${eve.length}개 입니다.`);
+
+    </script>
+</body>
+</html>

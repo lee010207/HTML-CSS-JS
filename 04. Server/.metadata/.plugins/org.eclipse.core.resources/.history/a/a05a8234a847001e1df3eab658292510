@@ -1,0 +1,24 @@
+package com.controller;
+
+import java.util.HashMap;
+
+public class HashMapTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// HashMap
+		// 자료구조
+		// : 값을 저장할 때 Key, Value 형태로 저장 (like Dictionary)
+		// Key는 중복 X , value는 중복 가능
+		// HashMap<key DataType, Value Datatype> h = new 앞과 동일
+		
+		// 사용예시
+		// HashMape에 "이름" : "홍길동" 저장하기
+		HashMap<String, String> name = new HashMap<>();
+		name.put("이름","홍길동");
+		System.out.println(name);
+		
+	}
+
+}

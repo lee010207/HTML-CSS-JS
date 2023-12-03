@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex01Ajax</title>
+</head>
+<body>
+	
+	<div id ="rs-area"></div>
+	<button id = "req-btn">서버요청</button>
+	
+	<script src="./js/jquery-3.7.0.js"></script>
+	<script>
+		// 서버에서 보내준 데이터를 div태그 저장시켜서 출력해줄거임
+		
+		// 버튼을 클릭했을 때, 서버에 요청하는 이벤트 구현
+		$("#req-btn").on("click", function(){
+			// 서버에 비동기 통신을 하기 위한 Ajax함수 구현 
+			// 화면에 갱신 없이 통신됨(서버 요청이 들어감)
+			$.ajax({
+				// get방식으로 데이터 붙여서 보내기
+				// 하나 이상의 데이터를 보낼 때 : &(구분자 역할)로 묶어줌
+				url:"ajax",
+				// Servlet의 urlmapping값 작성
+				// ex) webapp/폴더/html파일 --> 한번 올라가야함
+				// => ../을 앞에 붙여줘야함
+				type:"get",
+				// type : 데이터를 전송하는 방식(Get/Post)
+				data:{data:1234, txt:"Hello"},
+				success:function(res){
+				 console.log("요청성공!");
+				 console.log("응답받은 데이터 : ", res);
+				 
+				 // 객체 형태로 사용하려면 변환을 해줘야 함!
+				 // 응답받은 데이터가 JSON형식의 문자열데이터인 경우
+				 // JSON.parse()를 이용해서 객체로 변환해줘야 한다
+				 let obj = JSON.parse(res);
+				 console.log(obj);
+				 
+				},
+				error:function(){
+					console.log("요청실패..");
+				}
+				
+			}); //end ajax
+			
+		});// end event함수
+	
+	</script>
+</body>
+</html>

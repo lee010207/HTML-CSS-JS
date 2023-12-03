@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        ❤️ <span id="like">0</span>
+    </div>
+        <button onclick="up()">좋아요</button>
+        <button onclick="down()">싫어요</button>
+
+    <script>
+        // 버튼을 눌렀을 때 숫자가 변경되는 함수 만들기
+        // 1) 좋아요 버튼 : 숫자가 1씩 증가
+        // 2) 싫어요 버튼 : 숫자가 1씩 감소
+        let likenum = 0;
+        const like = document.getElementById("like");
+        
+        let up = function(){
+            likenum++;
+            like.innerText = likenum;
+            like.innerText += " 😊";
+        }
+
+        let down = function(){
+            likenum--;
+            like.innerText = likenum;
+            like.innerText += " 🤨";
+        }
+
+        /* 다른 코드
+        let up = function(){
+            const like = document.getElementById("like");
+            like.innerText = parseInt(like.innerText)+1;
+        }
+        let down = function(){
+            const like = document.getElementById("like");
+            like.innerText = parseInt(like.innerText)-1;
+        }
+        */
+    </script>
+</body>
+</html>

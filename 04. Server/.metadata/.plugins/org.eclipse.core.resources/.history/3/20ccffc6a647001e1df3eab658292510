@@ -1,0 +1,119 @@
+package com.front;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.controller.JoinService;
+import com.controller.LoginService;
+import com.controller.LogoutService;
+import com.controller.MsgDeleteAll;
+import com.controller.MsgSendService;
+import com.controller.UpdateService;
+import com.model.MemberDAO;
+import com.model.MemberDTO;
+import com.model.MessageDAO;
+import com.model.MessageDTO;
+
+/**
+ * Servlet implementation class FrontController
+ */
+@WebServlet("*.do")
+// *.do : 모든 url값이 .do로 끝나면 여기로 오게
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		System.out.println("프론트 컨트롤러 실행");
+		
+		// 1. 클라이언트가 요청한 url 주소 가져오기
+		String reqURI = request.getRequestURI();
+		//System.out.println(reqURI);
+		
+		// 2. Context Path : 웹 어플리케이션의 시작 주소
+		String ctPath = request.getContextPath();
+		//System.out.println(ctPath);
+		
+		// 3. client 요청 부분만 분리
+		// ctPath 길이 + 1( '/' ) 만큼 잘라내고 뒷부분만 가져오기
+		String command = reqURI.substring(ctPath.length() + 1);
+		System.out.println(command);
+		
+		// 4. 기능 연결
+		request.setCharacterEncoding("EUC-KR");
+		
+		if(command.equals("JoinService.do")) {
+			// 회원가입 기능
+			
+			JoinService join = new JoinService();
+			// JoinService클래스의 execute()메서드 사용하기 위해 객체 생성
+			
+			String moveUrl = join.execute(request,response);
+			// 위에 service 메서드의 매개변수인 request, response를 execute메서드 매개변수로 보내줌
+			
+			response.sendRedirect(moveUrl);
+			
+		}else if(command.equals("LoginService.do")) {
+			// 로그인 기능
+			
+			LoginService login = new LoginService();
+			String moveUrl = login.execute(request, response);
+			
+			response.sendRedirect(moveUrl);
+			
+		}else if(command.equals("LogoutService.do")) {
+			// 로그아웃 기능
+			LogoutService logout = new LogoutService();
+			String moveUrl = logout.execute(request, response);
+			response.sendRedirect(moveUrl);
+			
+		}else if(command.equals("UpdateService.do")) {
+			// 회원정보수정 기능
+			
+			UpdateService update = new UpdateService();
+			String moveUrl = update.execute(request, response);
+			
+			response.sendRedirect(moveUrl);
+			
+		}else if(command.equals("MsgSendService.do")){
+			// 메세지 전송 기능
+			
+			MsgSendService msg = new MsgSendService();
+			String moveUrl = msg.execute(request, response);
+			
+			response.sendRedirect(moveUrl);
+			
+		}else if(command.equals("DeleteAll.do")) {
+			// 메세지 전체 삭제 기능
+			
+			MsgDeleteAll msg = new MsgDeleteAll();
+			String moveUrl = msg.execute(request, response);
+			
+			response.sendRedirect(moveUrl);
+			
+		}else if(command.equals("DeleteMsg.do")) {
+			// 메세지 개별 삭제 기능
+			
+			String num =request.getParameter("num");
+			int ch_num = Integer.parseInt(num);
+			
+			MessageDAO dao = new MessageDAO();
+			dao.delete(ch_num);
+			
+			response.sendRedirect("main.jsp#two");
+		}
+		
+	}
+
+}

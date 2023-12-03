@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
+    <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
+    <fullyQualifiedTypeName name="com.model.CoffeeDTO"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="javax.websocket.Session"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.model.MessageDTO"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.model.MemberDTO"/>
+    <fullyQualifiedTypeName name="com.model.MessageDAO"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.controller.JoinService"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="com.controller.MsgDelete"/>
+    <fullyQualifiedTypeName name="com.front.Icommand"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.controller.LoginService"/>
+    <fullyQualifiedTypeName name="com.controller.LogoutService"/>
+    <fullyQualifiedTypeName name="com.controller.UpdateService"/>
+    <fullyQualifiedTypeName name="com.controller.MsgSendService"/>
+    <fullyQualifiedTypeName name="com.controller.MsgDeleteAll"/>
+    <fullyQualifiedTypeName name="com.controller.DeleteMsg"/>
+</qualifiedTypeNameHistroy>

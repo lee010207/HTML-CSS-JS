@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Date 내장객체 실습
+        let date = new Date();
+        console.log(date);
+     // --> Thu Jul 13 2023 10:43:44 GMT+0900 (한국 표준시)
+        
+        // 연 월 일 시 분 초 각각 접근
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let seconds = date.getSeconds();
+        let time = date.getTime();
+
+        console.log(`${year}년 ${month}월 ${day}일`);
+     // --> 2023년 6월 13일
+     // month : 숫자가 0부터 시작 => + 1 해줘야 실제 달이 나옴
+        
+        console.log(`${hour}시 ${minute}분 ${seconds}초`);
+        console.log(time);
+    </script>
+</body>
+</html>

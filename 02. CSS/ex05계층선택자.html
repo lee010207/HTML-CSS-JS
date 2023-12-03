@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 계층선택자
+            - 위치를 기준으로 디자인을 적용하는 방법
+        */
+        /* 자손 선택자 
+        --> div의 자손인 p태그에만 빨강색을 적용하겠다 */
+        /* div p{
+            color: red;
+        } */
+        /* 자식 선택자 --> 자손 p태그에는 적용 X */
+        /* div > p {
+            color: red;
+        } */
+        /* 근접후행 선택자 */
+        /* p + span{
+            color: aqua;
+        } */
+        /* 후행 선택자 : p태그 옆에 오는 모든 span 태그 의미 */
+        p ~ span{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p>송아지</p>
+
+    <!-- 레이아웃 짤 때, 영역을 나눌 때 쓰는 태그-->
+    <div>
+        <p> 강아지 </p>
+        <table>
+            <tr>
+                <td>
+                    <p>꼬끼오 닭</p>
+                </td>
+                <td>병아리 삐약</td>
+            </tr>
+        </table>
+        <span> 고양이 </span>
+    </div>
+    <!--같은 라인에 있는 태그들 : 형제관계 -->
+    <p>까르보나라</p>
+    <span>토마토</span>
+    <span>바질</span>
+    <span>바지락</span>
+
+</body>
+</html>

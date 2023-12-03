@@ -1,0 +1,25 @@
+package com.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.front.Icommand;
+import com.model.MessageDAO;
+
+public class DeleteMsg implements Icommand{
+	
+	public String execute(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String num =request.getParameter("num");
+		int ch_num = Integer.parseInt(num);
+		
+		MessageDAO dao = new MessageDAO();
+		dao.delete(ch_num);
+		
+		return "main.jsp#two";
+	}
+	
+}

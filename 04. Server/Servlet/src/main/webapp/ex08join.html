@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	fieldset{
+		width: 600px;
+		margin : auto;
+		padding : 50px;
+		box-sizing: border-box;
+	}
+	table{
+		margin :auto;
+	}
+	#t1{
+		width : 100px;
+	}
+
+</style>
+</head>
+<body>
+	<form action="Ex08Join" method="post">
+		<fieldset>
+			<legend>Join Page</legend>
+			<table>
+				<tr>
+					<td id="t1">ID</td>
+					<td id="t2"><input type="text" name="id"></td>
+				</tr>
+				<tr>
+					<td id="t1">PW</td>
+					<td id="t2"><input type="text" name="pw"></td>
+				</tr>
+				<tr>
+					<td id="t1">NAME</td>
+					<td id="t2"><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td id="t1">E-MAIL</td>
+					<td id="t2"><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td id="t1">TEL</td>
+					<td id="t2"><input type="text" name="tel"></td>
+				</tr>
+				<tr>
+					<td id="t1">GENDER</td>
+					<td id="t2">
+					MAN<input type="radio" name="gender" value="MAN">
+					WOMEN<input type="radio" name="gender" value="WOMEN">
+					</td>
+				</tr>
+				<tr>
+					<td id="t1">HOBBY</td>
+					<td id="t2">
+					SPORT<input type="checkbox" name="hobby" value="SPORT">
+					GAME<input type="checkbox" name="hobby" value="GAME">
+					MOVIE<input type="checkbox" name="hobby" value="MOVIE">
+					BOOK<input type="checkbox" name="hobby" value="BOOK">
+					TRAVEL<input type="checkbox" name="hobby" value="TRAVEL">
+					</td>
+				</tr>
+				<tr>
+					<td id="t1">BIRTHDAY</td>
+					<td id="t2"><input type="date" name="birthday"></td>
+				</tr>
+				<tr>
+					<td id="t1">COLOR</td>
+					<td id="t2"><input type="color" name="color"></td>
+				</tr>
+				<tr>
+					<td id="t1">COUNTRY</td>
+					<td id="t2">
+						<select name ="country">
+							<option>KOREA</option>
+							<option>JAPAN</option>
+							<option>CHINA</option>
+							<option>USA</option>
+							<option>FRANCE</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td id="t1">TALK</td>
+				</tr>
+				<tr>
+					<td colspan = "2">
+					<textarea rows="5" cols="68" name="talk"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan ="2" align="center">
+					<input type="submit">
+					<input type="reset">
+					</td>
+				</tr>
+
+		</table>
+	</fieldset>
+	</form>
+</body>
+</html>

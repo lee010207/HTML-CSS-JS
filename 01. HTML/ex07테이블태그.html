@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<1>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        table태그 web에서 표형태의 화면을 만들때 사용
+        tr(table row)태그 - table 태그 안에서 행을 의미
+        td태그 : table 태그 안에서 열의 의미
+    -->
+    <table border="1px solid black">
+        <tr>
+            <td>번호</td>
+            <td>음식</td>
+            <td>가격</td>
+            <td>개수</td>
+        </tr>
+        <tr>
+            <td>1번</td>
+            <td>육회</td>
+            <td>33,000원</td>
+            <td rowspan="2">10개</td>
+            <!-- 셀(행) 병합 : rowspan
+                - 세로로 2칸 차지해라 -->
+        </tr>
+        <tr>
+            <td>2번</td>
+            <td>치킨</td>
+            <td>30,000원</td>
+        </tr>
+        <tr>
+            <td>3번</td>
+            <td>족발</td>
+            <td colspan="2">38,000원</td>
+            <!-- 셀(열) 병합 : colspan
+                - 가로로 2칸 차지해라 -->
+
+        </tr>
+    </table>
+</body>
+</html>

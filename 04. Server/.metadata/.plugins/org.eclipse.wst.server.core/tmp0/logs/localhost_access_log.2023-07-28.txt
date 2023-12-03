@@ -1,0 +1,6 @@
+127.0.0.1 - - [28/Jul/2023:10:41:43 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:10:41:44 +0900] "GET /MessageSystem/main.jsp HTTP/1.1" 200 8171
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:10:41:44 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:10:41:59 +0900] "POST /MessageSystem/LoginService HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:10:41:59 +0900] "GET /MessageSystem/main.jsp HTTP/1.1" 200 8658
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:10:44:33 +0900] "GET /MessageSystem/update.jsp HTTP/1.1" 200 1441

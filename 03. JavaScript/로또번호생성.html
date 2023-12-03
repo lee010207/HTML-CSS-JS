@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Jua:400" rel="stylesheet">
+    <style>
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px;
+            font-family: 'Jua';
+        }
+
+        h1{
+            margin: 0;
+            padding: 0;
+        }
+
+        #lotto-container{
+            display: flex;
+            align-items: center;
+            gap:20px;
+        }
+
+        .num{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50px;
+            /* background-color: orange; */
+            text-align: center;
+            line-height: 100px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .bonus-connect{
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .bonus{
+            background-color: lightgray;
+        }
+        
+        .btn-lotto{
+            width: 150px;
+            height: 50px;
+            border: 0;
+            border-radius: 5px;
+            box-shadow: 3px 3px black;
+            font-family: 'Jua';
+            font-size: 1.5em;        
+            font-weight: bold;    
+        }
+        .btn-lotto:hover{
+            cursor: pointer;
+        }
+        .btn-lotto:active{
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <h1>로또 추첨기</h1>
+        <div id="lotto-container">
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="bonus-connect">+</div>
+            <div id="bonus" class="num"></div>
+        </div>
+    
+        <button class="btn-lotto" onclick="lottoPlay()">로또번호생성</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        //로또 추첨기 만들기
+        //1. 버튼을 클릭시 lottoPlay()가 실행된다.
+        //2. 1~45 사이의 랜덤한 숫자 7개가 생성된다.(중복없이)
+        //3. 생성된 7개 숫자를 웹 페이지에 출력한다.
+        // - 7개 중 6개는 class가 "num"인 div태그에 출력한다.
+        // - 마지막 번호를 id가 'bonus'인 div태그에 출력한다.
+        // * 웹 페이지 출력은 innerText 활용
+
+        /* 내 코드 
+        --> 보너스 숫자 따로 빼지않고 7개 숫자 한꺼번에 출력해도 상관없음
+            스타일을 따로 줄때 편리하게 하려고 따로 분리
+            
+        let arr =[];
+
+        let lottoPlay = function(){
+            const num = document.getElementsByClassName("num");
+            
+            for(let i = 0; i <7; i++){
+                let number = parseInt(Math.random()*45) + 1;
+                arr[i] = number;
+                for(let j = 0; j < i; j++){
+                    if(arr[j]== arr[i]){
+                        i--;
+                    }
+                }
+            }
+            for(let i= 0; i < arr.length; i++){
+                num[i].innerText = arr[i];
+            }
+            
+        }
+        */
+
+        let lottoPlay = function(){
+            let lottoNums = dedupNum();
+
+            const nums = document.getElementsByClassName("num");
+            // HTMLCollection 객체 타입으로 리턴 : 유사배열 형태
+            // --> 형태는 배열이지만 배열의 기본적인 함수는 사용 X
+        
+            // 6번쨰 num까지만 출력
+            for(let i = 0; i <nums.length-1; i++){
+                nums[i].innerText = lottoNums[i];
+            }
+
+
+            // 마지막 보너스 번호 따로 출력(배열길이 활용)
+            const bonus = document.getElementById("bonus");
+            bonus.innerText = lottoNums[nums.length-1];
+
+        }
+
+        let dedupNum = function(){
+            // 랜덤한 숫자 뽑아서 배열에 저장하는 함수
+            let numbers = [];
+
+            for(let i =0; i < 7; i++){
+                numbers[i] = parseInt(Math.random()*45) + 1;
+
+                for(let j =0; j <i; j++){
+                    if(numbers[i] === numbers[j]){
+                        i--;
+                    }
+                }
+            }
+            console.log(numbers);
+
+            return numbers;
+        }
+    </script>
+
+</body>
+</html>

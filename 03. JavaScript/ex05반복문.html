@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 반복문
+        // Java와 동일하게 사용
+        // while / do-while / for
+        // for(let 변수명 = 대입값; 반복조건문; 반복시변수변화){
+            // 실행문
+        // }
+
+        // for(let i = 0; i < 10; i++){
+        //     console.log(i);
+        // }
+
+        // 삼육구 게임 만들기
+
+        /*
+        for(let i = 1; i < 51; i++){
+            if(parseInt(i / 10) == 3 && (i % 10 === 3|| i % 10 === 6 || i % 10 === 9)){
+                    console.log("짝짝");
+            }
+            if(parseInt(i / 10) == 3 || i % 10 === 3 || i % 10 === 6 || i % 10 === 9){
+                console.log("짝");
+            }else{
+                console.log(i);                
+            }
+  
+        }
+        */
+
+        for(let i = 1; i < 51; i++){
+            if(parseInt(i/10) === 3 && (i % 10 === 3|| i % 10 === 6 || i % 10 === 9)){
+                console.log("짝짝");
+            }else if(i % 10 === 3|| i % 10 === 6 || i % 10 === 9){
+                console.log("짝");
+            }else if(parseInt(i/10) === 3){
+                console.log("짝");
+            }else{
+                console.log(i);
+            }        
+        }
+    </script>
+</body>
+</html>

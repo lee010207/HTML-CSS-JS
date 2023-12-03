@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자바스크립트 언어를 작성하는 영역
+        // body 끝 태그 위쪽에 script 태그 생성
+
+        // << 출력문 >>
+        // 1. document.write()
+        // 기존내용이 사라지고 출력됨 --> 잘 사용 X
+        // document : 현재 HTML 문서를 가리킴
+        // 현재 HTML 문서에 내가 작성한 내용을 출력하겠다
+        document.write("Hello JavaScript!");
+
+        // 2. alert()
+        // : 웹 페이지에 알림창으로 출력하는 함수 : 팝업창 출력
+        // 사용자에게 안내할 내용이 있을 떄 주로 사용
+        alert("팝업창 띠용");
+
+        // 3. console.log()
+        // : 개발자 도구 Console창에 출력하는 함수
+        // 개발 및 테스트용으로 사용
+        // log -> 네모모양 2번째 enter => 자동완성
+        console.log("console용");
+
+        // << 입력문 >>
+        // 1. prompt()
+        // : 사용자의 입력값(키보드값)을 받는 함수 --> 입력창이 뜸
+        // 문자열로 반환
+        // 아무것도 입력을 안하면 null 또는 공백(기본값) 으로 반환
+
+        let fruit = prompt("좋아하는 과일을 입력해주세요!");
+        console.log(fruit);
+        // 입력값을 받아 fruit 변수에 담아줌 -> 콘솔창에 입력값 출력
+        
+        // 2. confirm()
+        // : 확인, 취소를 입력받는 함수
+        // 논리형 데이터로 반환(ture / false)
+        let isCheck = confirm("회원정보를 변경하시겠습니까?");
+        console.log(isCheck);
+
+    </script>
+</body>
+</html>

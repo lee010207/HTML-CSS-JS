@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fruits = ["apple", "avocado", "banana", "blueberry", "cherry", "dragon fruit",
+                    "fig", "grape", "kiwi", "lime", "mango", "orange", "oriental melon", "pear",
+                    "peach", "pineapple", "shine muscat", "strawberry", "tomato",
+                    "water melon", "yuja"];
+        fruits.pop();
+        console.log(fruits);
+
+        fruits.push("grapefruit");
+        console.log(fruits);
+
+        fruits.push("cherry tomato", "pine nut", "blackberry");
+        console.log(fruits);
+
+        let isCheck = fruits.includes("orange");
+        console.log("오렌지가 있습니까 : ", isCheck);
+        let isCheck1 = fruits.includes("kiwi");
+        console.log("키위가 있습니까 : ", isCheck1);
+
+        let wm = fruits.indexOf("water melon");
+        fruits[wm] = "melon";
+        console.log(fruits);
+
+        let lm = fruits.indexOf("lime");
+        fruits.splice(lm, 3);
+        console.log(fruits);
+
+        let sm = fruits.indexOf("shine muscat");
+        fruits.splice(sm);
+        console.log(fruits);
+
+        let pr = fruits.indexOf("pear");
+        let pa = fruits.indexOf("pineapple");
+        let pfru = fruits.slice(pr,pa+1);
+        console.log("p로 시작하는 과일 목록 >> " , pfru);
+    </script>
+</body>
+
+</html>

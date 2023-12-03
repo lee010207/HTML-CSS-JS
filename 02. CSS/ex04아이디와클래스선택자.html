@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        # 아이디 선택자  /  . 클래스 선택자
+        : 특정 요소(태그)에다가 디자인을 주고 싶을 때 사용
+        --> 웹에서 여러 요소 중에서 딱 한번만 쓰일 때 사용
+        */
+
+        /* 그냥 apple{} 이렇게만 하면 타입선택자
+        --> 앞에 #을 붙여서 id선택자 명시 */
+        #apple{
+            color: red;
+        }
+        #banana{
+            color: yellow;
+        }
+        #berry{
+            color: blueviolet;
+        }
+        #kiwi{
+            color: greenyellow;
+        }
+
+        /* 클래스 선택자 : . 
+        --> 중복되는 요소에 여러번 적용 할 때 */
+        .apple{
+            color: red;
+        }
+        .bana{
+            color: orange;
+        }
+        .blue{
+            color: purple;
+        }
+        .kw{
+            color: darkcyan;
+        }
+        .text{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 태그하나하나에 각 id 속성을 줌 : id(이름을 하나 지어줘) -->
+    <h1 id="apple">사과</h1>
+    <h1 id = "banana">바나나</h1>
+    <h1 id="berry">블루베리</h1>
+    <h1 id="kiwi">키위</h1>
+
+    <br>
+
+    <ul>
+        <!-- 클래스 속성을 줌 -->
+        <li class="apple">사과</li>
+        <li class="bana">바나나</li>
+        <li class="blue">블루베리</li>
+        <!-- 클래스는 여러개를 줄 수 있음 -->
+        <li class="kw text">키위</li>
+    </ul>
+</body>
+</html>

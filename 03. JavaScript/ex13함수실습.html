@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수의 매개변수, return문은 상황에 따라 정의
+        
+        let scores = [11,75,96,24,38];
+
+        // scores 배열에 있는 모든 점수를 더해주는 함수
+        let sum = function(arr){
+            let num = 0;
+            for(let i = 0; i < arr.length; i++){
+                num += arr[i];
+            }
+            console.log(num);
+            return num;
+        }
+
+        sum(scores);
+
+        // let avg = function(arr) {
+        //     console.log(sum(arr)/arr.length);
+        //     return sum(arr)/arr.length;
+        // }
+        
+        let avg = sum(scores)/scores.length;
+        console.log(avg);
+        
+    </script>
+</body>
+</html>
